@@ -13,5 +13,13 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('items.index');
 });
+
+
+Route::resource('items', 'ItemsController');
+
+Route::group(['prefix' => 'api/v1'], function() {
+	Route::get('items', array('as'=>'api.v1.items', 'uses'=>'ItemsController@getDatatable'));	
+});
+
