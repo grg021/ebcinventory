@@ -16,11 +16,13 @@ class CreateItemsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('code');
-			$table->string('name')->nullable;
+			$table->string('name')->nullable();
 			$table->string('location')->nullable();
 			$table->text('description')->nullable();
 			$table->float('amount')->default(0);
 			$table->integer('quantity')->default(0);
+			$table->integer('lifespan')->default(0);
+			$table->date('datepurchased')->nullable();
 			$table->integer('category_id');
 			$table->timestamps();
 		});

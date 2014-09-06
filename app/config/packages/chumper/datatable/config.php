@@ -34,7 +34,7 @@ return array(
         |
         */
 
-        'id' => '',
+        'id' => 'itemlist',
 
         /*
         |--------------------------------------------------------------------------
@@ -52,7 +52,15 @@ return array(
 
             "sPaginationType" => "full_numbers",
 
-            "bProcessing" => false
+            "bProcessing" => false,
+
+            "stateSave" => true,
+
+            "paging"   => false,
+
+            "dom"   => 'T<"clear">lfrtip',
+
+            "tableTools" => '{"sSwfPath": "/swf/copy_csv_xls_pdf.swf"}'
 
         ),
 
@@ -68,7 +76,9 @@ return array(
         |
         */
 
-        'callbacks' => array(),
+        'callbacks' => array(
+            "initComplete" => "function(settings, json) { table = $('#itemlist').DataTable(); new $.fn.dataTable.FixedHeader( table ); }"
+            ),
 
         /*
         |--------------------------------------------------------------------------

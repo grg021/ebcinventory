@@ -19,6 +19,8 @@
     {{ HTML::style('font-awesome-4.1.0/css/font-awesome.min.css') }}
     {{ HTML::style('css/admin-style.css') }}
     {{ HTML::style('css/plugins/dataTables.bootstrap.css') }}
+    {{ HTML::style('css/dataTables.tableTools.min.css') }}
+    {{ HTML::style('css/dataTables.fixedHeader.min.css') }}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,6 +32,8 @@
     {{ HTML::script('js/jquery-1.11.0.js') }}
     {{ HTML::script('js/jquery.dataTables.min.js') }}
     {{ HTML::script('js/plugins/dataTables/dataTables.bootstrap.js') }}
+    {{ HTML::script('js/dataTables.tableTools.min.js') }}
+    {{ HTML::script('js/dataTables.fixedHeader.min.js') }}
 
   </head>
 

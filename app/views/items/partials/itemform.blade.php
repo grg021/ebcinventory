@@ -15,20 +15,25 @@
             {{ Form::select('category_id', $cats, null, ['class' => 'form-control']); }}
             <p class="help-block">{{ errors_for('category_id', $errors) }}</p>
         </div>
+        <div class="form-group {{ errors_check('lifespan', $errors) }}">
+            {{ Form::label('lifespan', 'Life Span') }}
+            {{ Form::text('lifespan', null, ['class' => 'form-control']) }}
+            <p class="help-block">{{ errors_for('lifespan', $errors) }}</p>
+        </div>
     </div>
     <div class="col-lg-6">
-        <div class="form-group {{ errors_check('buyprice', $errors) }}">
-            {{ Form::label('buyprice', 'Buying Price') }}
-            {{ Form::text('buyprice', null, ['class' => 'form-control']) }}
-            <p class="help-block">{{ errors_for('buyprice', $errors) }}</p>
+        <div class="form-group {{ errors_check('quantity', $errors) }}">
+            {{ Form::label('quantity', 'Quantity') }}
+            {{ Form::text('quantity', null, ['class' => 'form-control']) }}
+            <p class="help-block">{{ errors_for('quantity', $errors) }}</p>
         </div>
-        <div class="form-group {{ errors_check('sellprice', $errors) }}">
-            {{ Form::label('sellprice', 'Selling Price') }}
-            {{ Form::text('sellprice', null, ['class' => 'form-control']) }}
-            <p class="help-block">{{ errors_for('sellprice', $errors) }}</p>
+        <div class="form-group {{ errors_check('datepurchased', $errors) }}">
+            {{ Form::label('datepurchased', 'Date Purchased') }}
+            {{ Form::text('datepurchased', null, ['class' => 'form-control datepicker']) }}
+            <p class="help-block">{{ errors_for('datepurchased', $errors) }}</p>
         </div>
         <div class="form-group {{ errors_check('code', $errors) }}">
-            {{ Form::label('code', 'Code *') }}
+            {{ Form::label('code', 'Property Number *') }}
             {{ Form::text('code', null, ['class' => 'form-control']); }}
             <p class="help-block">{{ errors_for('code', $errors) }}</p>
         </div>
@@ -39,3 +44,8 @@
     {{ Form::textarea('description', null, ['class' => 'form-control']); }}
     <p class="help-block">{{ errors_for('description', $errors) }}</p>
 </div>
+<script>
+jQuery(document).ready(function($) {
+    $('.datepicker').datepicker();
+});
+</script>

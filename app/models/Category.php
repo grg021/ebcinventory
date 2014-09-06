@@ -2,5 +2,5 @@
 
 class Category extends BaseModel {
 	protected $table = 'categories';
-	protected $fillable = [];
+	protected $fillable = ['name'];
 }

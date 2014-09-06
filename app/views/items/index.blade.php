@@ -5,8 +5,11 @@
 @stop
 @section('content')
 <p>
-{{ link_to('items/create', "New Item", ['class'=>'btn btn-success']) }}
+<a href="{{ URL::to('items/create') }}" class="btn btn-success">
+                  <span class="glyphicon glyphicon-plus"></span> New Item
+                </a>
 </p>
+<hr/>
 <!-- /.row -->
 <div class="row">
     <div class="col-lg-12">
@@ -18,7 +21,7 @@
             <div class="panel-body">
                 <div class="table-responsive">
 				{{ Datatable::table()
-				    ->addColumn('Code', 'Name', 'Category', 'Location', 'Quantity')       // these are the column headings to be shown
+				    ->addColumn('Property Number', 'Name', 'Type', 'Location', 'Quantity', 'Date Purchased', 'Lifespan')       // these are the column headings to be shown
 				    ->setUrl(URL::to('api/v1/items'))
 				    ->setCustomValues('table-url', "items")
     				->render('items.datatable.template') }}

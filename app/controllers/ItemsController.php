@@ -144,7 +144,7 @@ class ItemsController extends \BaseController {
         ->addColumn('category', function($model) {
         	return $model->category->name;
         })
-        ->showColumns('location', 'quantity')
+        ->showColumns('location', 'quantity', 'datepurchased', 'lifespan')
         ->searchColumns('code', 'name')
         ->orderColumns('code', 'name', 'category', 'location', 'quantity')
         ->make();

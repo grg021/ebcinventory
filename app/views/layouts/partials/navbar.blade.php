@@ -12,6 +12,12 @@
     <!-- /.navbar-header -->
 
     <ul class="nav navbar-top-links navbar-right">
+        <li>
+            <a href="{{ URL::to('items') }}"><i class="fa fa-table fa-fw"></i> Items</a>
+        </li>
+        <li>
+            <a href="{{ URL::to('categories') }}"><i class="fa fa-list fa-fw"></i> Types</a>
+        </li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <i class="fa fa-user fa-fw"></i> {{ Auth::check() ? Auth::user()->username : "" }} <i class="fa fa-caret-down"></i>
@@ -31,32 +37,6 @@
     </ul>
     <!-- /.navbar-top-links -->
 
-    <div class="navbar-default sidebar" role="navigation">
-        <div class="sidebar-nav navbar-collapse">
-            <ul class="nav" id="side-menu">
-                <li class="sidebar-search">
-                    <div class="input-group custom-search-form">
-                        <input type="text" class="form-control" placeholder="Search...">
-                        <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </span>
-                    </div>
-                    <!-- /input-group -->
-                </li>
-                <li>
-                    <a class="{{ Request::is('admin/dashboard') ? 'active':''}}" href="/admin/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                </li>
-                <li>
-                    <a href="/items"><i class="fa fa-table fa-fw"></i> Items</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-list fa-fw"></i> Categories</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.sidebar-collapse -->
-    </div>
+    
     <!-- /.navbar-static-side -->
 </nav>

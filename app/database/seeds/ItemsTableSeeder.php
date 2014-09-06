@@ -20,6 +20,8 @@ class ItemsTableSeeder extends Seeder {
 			$item->amount = $faker->randomFloat(2);
 			$item->quantity = $faker->randomNumber(3);
 			$item->category_id = $faker->randomElement($cats);
+			$item->lifespan = $faker->randomNumber();
+			$item->datepurchased = $faker->date();
 			$item->save();
 		}
 	}

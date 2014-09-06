@@ -29,6 +29,7 @@
 @if (isset($values['table-url']))
 <script>
 jQuery(document).ready(function(){
+
     $('#{{$id}}').hover(function() {
         $(this).css('cursor', 'pointer');
     });
@@ -37,6 +38,7 @@ jQuery(document).ready(function(){
         $url = e.currentTarget.baseURI;
         document.location.href = "{{ $values['table-url'] }}/" + $id + "/edit";
     });
+
 });
 </script>
 @endif

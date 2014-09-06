@@ -18,6 +18,7 @@ Route::get('/', function()
 
 
 Route::resource('items', 'ItemsController');
+Route::resource('categories', 'CategoriesController');
 
 Route::group(['prefix' => 'api/v1'], function() {
 	Route::get('items', array('as'=>'api.v1.items', 'uses'=>'ItemsController@getDatatable'));	
